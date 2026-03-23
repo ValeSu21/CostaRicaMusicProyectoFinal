@@ -1,0 +1,37 @@
+@model LoginDto
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h2 class="mb-3">Costa Rica Music</h2>
+                <p class="text-muted">Avance sin base de datos, usando autenticación simulada.</p>
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+                </form>
+                <hr />
+                <div class="small text-muted">
+                    <div><strong>Admin:</strong> admin@crmusic.com / Admin123!</div>
+                    <div><strong>User:</strong> user@crmusic.com / User123!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,20 @@
+@model ArtistaDto
+@{
+    ViewData["Title"] = "Artista";
+}
+<div class="card shadow-sm border-0">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="@Model.ImagenUrl" class="img-fluid h-100 object-fit-cover rounded-start" alt="@Model.Nombre" />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body p-4">
+                <h2>@Model.Nombre</h2>
+                <p><strong>Género:</strong> @Model.Genero</p>
+                <p><strong>País:</strong> @Model.Pais</p>
+                <p>@Model.Biografia</p>
+                <a asp-controller="Canciones" asp-action="Index" class="btn btn-dark">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
